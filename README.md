@@ -9,7 +9,7 @@ Descomprima el archivo .zip
 
 En la línea de comandos, dentro de la carpeta RentAGAmePage, correr el comando
 
-  'composer install'
+ 	'composer install'
 
 Dentro de la carpeta RentAGamePage busque el archivo .env (si no existe créelo).
 Modifique la siguiente sección deacuerdo a sus datos (DB_PORT, DB_DATABASE,DB_USERNAME,
@@ -24,7 +24,7 @@ DB_PASSWORD:
 
 En la línea de comandos, dentro de la carpeta RentAGAmePage, correr el comando
 
-  'php artisan key:generate'
+ 	'php artisan key:generate'
 
 luego el comando
 
