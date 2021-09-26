@@ -58,9 +58,17 @@ class VideogameController extends Controller
     public function list()
     {
         $data = []; //to be sent to the view
-        $data["title"] = "Create product";
-        $data["videogames"] = Videogame::all()->sortByDesc('id');
+        $data["title"] = "Lista de Juegos";
+        $data["videogames"] = Videogame::all()->sortByDesc('Name');
         return view('home.index')->with("data",$data);
+    }
+
+    public function amdinList()
+    {
+        $data = []; //to be sent to the view
+        $data["title"] = "Lista de Juegos";
+        $data["videogames"] = Videogame::all();
+        return view('admin.videogame.list')->with("data",$data);
     }
 
     public function delete(Request $request)
