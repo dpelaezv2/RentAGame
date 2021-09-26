@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Auth::routes();
-Route::get('/', 'App\Http\Controllers\HomeController@index')->name("home.index");
+Route::get('/', 'App\Http\Controllers\VideoGameController@list')->name("home.index");
 Route::get('/home', 'App\Http\Controllers\HomeController@index')->name('home');
 Route::get('/admin', 'App\Http\Controllers\Admin\AdminHomeController@index')->name("admin.home.index");
+Route::get('videoGame', 'App\Http\Controllers\Admin\VideoGameController@save')->name("videogame.save");
