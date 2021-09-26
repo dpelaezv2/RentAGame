@@ -60,7 +60,7 @@ class VideogameController extends Controller
         $data = []; //to be sent to the view
         $data["title"] = "Lista de Juegos";
         $data["videogames"] = Videogame::all()->sortByDesc('Name');
-        return view('home.index')->with("data",$data);
+        return view('admin.videogame.list')->with("data",$data);
     }
 
     public function amdinList()
