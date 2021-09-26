@@ -8,7 +8,7 @@
             <div class="col" >
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title fw-bold">{{ $videogame->getId() }} - {{ $book->getName() }}</h5>
+                        <h5 class="card-title fw-bold">{{ $videogame->getId() }} - {{ $videogame->getTitle() }}</h5>
                         <p  class="card-text">{{ __('videogame.precio') }} {{ $videogame->getPrice() }}</p>
                         <p  class="card-text">{{ __('videogame.cantidadVenta') }} {{ $videogame->getSaleStock() }}</p>
                         <p  class="card-text">{{ __('videogame.cantidadRenta') }} {{ $videogame->getRentStock() }}</p>
