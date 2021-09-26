@@ -9,7 +9,7 @@ class Videogame extends Model
 {
     use HasFactory;
     
-    //attributes id, name, price, created_at, updated_at
+    //attributes id, title, developer, category, price, used, saleStock, rentStock, keyWords, created_at, updated_at
     protected $fillable = ['title', 'developer', 'category', 'price', 'used', 'saleStock', 'rentStock', 'keyWords' ];
 
     public function getId()
@@ -102,7 +102,8 @@ class Videogame extends Model
         $this->attributes['keyWords'] = $keyWords;
     }
 
-    public function comments(){
+    public function comments()
+    {
         return $this->hasMany(Comment::class);
     }
 
