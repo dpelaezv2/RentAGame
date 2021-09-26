@@ -15,7 +15,7 @@ class VideogameController extends Controller
 
     public function create()
     {
-        return view('admin.videogame.');
+        return view('admin.videogame.create');
     }
 
     public function save(Request $request)
