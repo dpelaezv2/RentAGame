@@ -5,11 +5,9 @@
     <div class="container">
     <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">{{ __('admin.panel') }}</h2><br>
         <div class="row justify-content-center">
-            <div class="">
-                <form method="GET" action="{{ route('admin.user.create') }}">
-                    <button type="submit" class="btn btn-primary">{{ __('admin.crear') }}</button>
-                </form><br>
-            </div>
+            <form method="GET" action="{{ route('admin.user.create') }}">
+                <button type="submit" class="btn btn-primary">{{ __('admin.crear') }}</button>
+            </form><br>           
         </div>
         <div class="row row-cols-1 row-cols-md-3 g-4">
             @foreach($data["users"] as $user)
