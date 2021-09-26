@@ -17,3 +17,7 @@ Route::get('/', 'App\Http\Controllers\VideoGameController@list')->name("home.ind
 Route::get('/home', 'App\Http\Controllers\HomeController@index')->name('home');
 Route::get('/admin', 'App\Http\Controllers\Admin\AdminHomeController@index')->name("admin.home.index");
 Route::get('/add-videogame', 'App\Http\Controllers\VideoGameController@create')->name("admin.videogame.create");
+Route::get('/users-list', 'App\Http\Controllers\Admin\AdminUserController@list')->name("admin.user.list");
+Route::get('/user-create', 'App\Http\Controllers\Admin\AdminUserController@create')->name("admin.user.create");
+Route::Post('/user-delete', 'App\Http\Controllers\Admin\AdminUserController@delete')->name("admin.user.delete");
+Route::Post('/user-save', 'App\Http\Controllers\Admin\AdminUserController@save')->name("admin.user.save");

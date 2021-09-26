@@ -55,7 +55,6 @@ class User extends Authenticatable
                 "email" => "required",
                 "password" => "required",
                 "address" => "required",
-                "renting" => "required",
                 "admin" => "required|numeric",
             ]
         );
