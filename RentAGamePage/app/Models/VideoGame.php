@@ -8,9 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class Videogame extends Model
 {
     use HasFactory;
-    
-    //attributes id, title, developer, category, price, used, saleStock, rentStock, keyWords, created_at, updated_at
-    protected $fillable = ['title', 'developer', 'category', 'price', 'used', 'saleStock', 'rentStock', 'keyWords' ];
+
+    //attributes id, title, developer, cetegory, price, used,
+    //sale Stock, rentStock, KeyWords, picture, created_at, updated_at
+    protected $fillable = ['title', 'developer', 'category', 'price', 'used', 'saleStock', 'rentStock', 'keyWords', 'picture' ];
 
     public function getId()
     {
@@ -105,6 +106,16 @@ class Videogame extends Model
     public function comments()
     {
         return $this->hasMany(Comment::class);
+    }
+
+    public function getPicture()
+    {
+        return $this->attributes['picture'];
+    }
+
+    public function setPicture($picture)
+    {
+        $this->attributes['picture'] = $picture;
     }
 
 }
