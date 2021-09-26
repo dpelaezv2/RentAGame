@@ -12,8 +12,8 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+Auth::routes();
 Route::get('/', 'App\Http\Controllers\VideoGameController@list')->name("home.index");
 Route::get('/home', 'App\Http\Controllers\HomeController@index')->name('home');
 Route::get('/admin', 'App\Http\Controllers\Admin\AdminHomeController@index')->name("admin.home.index");
-Route::get('/add-videogame', 'App\Http\Controllers\Admin\VideoGameController@create')->name("admin.videogame.create");
+Route::get('/add-videogame', 'App\Http\Controllers\VideoGameController@create')->name("admin.videogame.create");
