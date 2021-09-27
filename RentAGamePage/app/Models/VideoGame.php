@@ -64,16 +64,6 @@ class Videogame extends Model
         $this->attributes['price'] = $price;
     }
 
-    public function getUsed()
-    {
-        return $this->attributes['used'];
-    }
-
-    public function setUsed($used)
-    {
-        $this->attributes['used'] = $used;
-    }
-
     public function getSaleStock()
     {
         return $this->attributes['saleStock'];

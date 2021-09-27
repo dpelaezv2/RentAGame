@@ -21,7 +21,6 @@ class CreateVideogamesTable extends Migration
             $table->text('developer');
             $table->text('category');
             $table->double('price');
-            $table->text('used');
             $table->integer('saleStock');
             $table->integer('rentStock');
             $table->text('keyWords')->nullable();
