@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateItemsTable extends Migration
+class CreateItemTable extends Migration
 {
     public function up()
     {
@@ -13,10 +13,10 @@ class CreateItemsTable extends Migration
             $table->double('fullPrice');
             $table->string('forRent');
             $table->integer('rentTime');
-            $table->bigInteger('order')->unsigned();
-            $table->foreign('order')->references('id')->on('orders');
-            $table->bigInteger('videoGame')->unsigned();
-            $table->foreign('videoGame')->references('id')->on('videogames');
+            $table->bigInteger('order_id')->unsigned();
+            $table->foreign('order_id')->references('id')->on('orders');
+            $table->bigInteger('videoGame_id')->unsigned();
+            $table->foreign('videoGame_id')->references('id')->on('videogames');
             $table->timestamps();
         });
     }
