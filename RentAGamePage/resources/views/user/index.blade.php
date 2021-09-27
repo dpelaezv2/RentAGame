@@ -141,7 +141,7 @@
                                                 <option>{{ __('videogame.renta') }}</option>
                                             </select>
                                         </div>
-                                        <div class="input-group">
+                                        <div class="row justify-content-center" >
                                             <button type="submit" class="btn btn-primary">{{ __('cart.agregar') }}</button>
                                          </div>
                                 </div>
