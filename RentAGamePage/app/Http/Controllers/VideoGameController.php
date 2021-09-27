@@ -32,7 +32,7 @@ class VideoGameController extends Controller
 
     public function list()
     {
-        $data = Videogame::all()->sortByDesc('id');
+        $data = Videogame::all();
         return view('user.index', compact('data'));
     }
 }
