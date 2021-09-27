@@ -4,14 +4,15 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Http\Request;
 
 class Videogame extends Model
 {
     use HasFactory;
-    
+
     //attributes id, title, developer, cetegory, price, used, 
     //sale Stock, rentStock, KeyWords, picture, created_at, updated_at
-    protected $fillable = ['title', 'developer', 'category', 'price', 'used', 'saleStock', 'rentStock', 'keyWords', 'picture' ];
+    protected $fillable = ['title', 'developer', 'category', 'price', 'used', 'saleStock', 'rentStock', 'keyWords', 'picture'];
 
     public function getId()
     {
@@ -110,12 +111,27 @@ class Videogame extends Model
 
     public function getPicture()
     {
-        return $this->attributes['picture'];
+        return $this->attributes['image'];
     }
 
     public function setPicture($picture)
     {
         $this->attributes['picture'] = $picture;
     }
-
+    public static function validate(Request $request)
+    {
+        $request->validate(
+            [
+                "title" => "required",
+                "developer" => "required",
+                "category" => "required",
+                "price" => "required|numeric|gt:0",
+                "used" => "required",
+                "saleStock" => "required|numeric|gt:0",
+                "rentStock" => "required|numeric|gt:0",
+                "keyWords" => "required",
+                "picture" => "image|mimes:png,jpg,jpeg|max:10000"
+            ]
+        );
+    }
 }

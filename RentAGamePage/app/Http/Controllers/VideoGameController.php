@@ -10,7 +10,7 @@ use Illuminate\Support\Facades;
 use Illuminate\Http\Response;
 
 
-class VideogameController extends Controller
+class VideoGameController extends Controller
 {
 
     public function create()
@@ -20,20 +20,27 @@ class VideogameController extends Controller
 
     public function save(Request $request)
     {
-        $request->validate([
-            "title" => "required",
-            "developer" => "required",
-            "category" => "required",
-            "price" => "required|numeric|gt:0",
-            "used" => "required",
-            "saleStock" => "required|numeric|gt:0",
-            "rentStock" => "required|numeric|gt:0",
-            "keyWords" => "required",
-            "picture" => 'image|mimes:png,jpg,jpeg|max:10000'
-        ]);
-        Videogame::create($request->only(["title","developer","category","price","used","saleStock","rentStock","keyWords", "picture"]));
+        $videoGame = new Videogame();
+        $videoGame->title = $request->input('title');
+        $videoGame->developer = $request->input('developer');
+        $videoGame->category = $request->input('category');
+        $videoGame->price = $request->input('price');
+        $videoGame->used = $request->input('used');
+        $videoGame->saleStock = $request->input('saleStock');
+        $videoGame->rentStock = $request->input('rentStock');
+        $videoGame->KeyWords = $request->input('keyWords');
+        if($request->hasFile('picture'))
+        {
+            $file = $request->file('picture');
+            $extention = $file->getClientOriginalExtension();
+            $fileName = time().'.'.$extention;
+            $file->move('uploads/videoGames/', $fileName);
+            $videoGame->image = $fileName;
+        }
+        $videoGame->save();
 
-        return back()->with('success','Item created successfully!');
+        
+        return back()->with('success','Videogame added successfully!');
     }
  
     public function show($id)
@@ -57,10 +64,8 @@ class VideogameController extends Controller
 
     public function list()
     {
-        $data = []; //to be sent to the view
-        $data["title"] = "Lista de Juegos";
-        $data["videogames"] = Videogame::all()->sortByDesc('Name');
-        return view('admin.videogame.list')->with("data",$data);
+        $data = Videogame::all()->sortByDesc('id');
+        return view('home.index', compact('data'));
     }
 
     public function amdinList()
