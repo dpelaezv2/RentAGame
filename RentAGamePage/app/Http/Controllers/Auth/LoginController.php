@@ -27,7 +27,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = "/";
+    protected $redirectTo = "/videogames-list";
 
     /**
      * Create a new controller instance.
@@ -50,7 +50,7 @@ class LoginController extends Controller
         if(auth()->attempt(array('email' => $input['email'], 'password' => $input['password'])))
         {
             if(auth()->user()->getAdmin() == 0){
-                return redirect()->route('home.index');
+                return redirect()->route('videogame.list');
             } else
             {
                 return redirect()->route('admin.home.index');
