@@ -5,24 +5,22 @@
 <section class="page-section portfolio" id="portfolio">
     <div class="container">
         <!-- Portfolio Section Heading-->
-        <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">{{ __('admin.menu') }}</h2>
+        <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">{{ __('admin.panel') }}</h2><br>
         <!-- Icon Divider-->
         <div class="divider-custom">
-            <div class="divider-custom-line"></div>
-            <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-            <div class="divider-custom-line"></div>
+            <div class="divider-custom-line"></div><br>
         </div>
         <!-- Portfolio Grid Items-->
-        <div class="row">
-            @foreach ($data as $videoGame)
-            <!-- Portfolio Item 1-->
-            <div class="col-md-6 col-lg-4 mb-5">
-                <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal1">
-                    <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                        <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
-                    </div>
-                    <img class="img-fluid" src="{{ asset('uploads/students/'.$videoGame->getPicture())}}" alt="" />
-                </div>
+        <div class="row justify-content-center">
+            <div class="portfolio-item mx-auto">
+            <form method="GET" action="{{ route('admin.user.list') }}">
+                <button type="submit" class="btn btn-primary">{{ __('admin.usuarios') }}</button>
+            </form>
+            </div>
+            <div class="portfolio-item mx-auto">
+            <form method="GET" action="{{ route('admin.videogame.list') }}">
+                <button type="submit" class="btn btn-primary">{{ __('admin.videojuegos') }}</button>
+            </form>
             </div>
         </div>
     </div>
