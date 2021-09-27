@@ -4,10 +4,10 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\Product;
+use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Videogame;
-use Illuminate\Support\Facades;
+use Illuminate\Support\Facades\File;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Hash;
 
@@ -96,6 +96,6 @@ class AdminVideoGameController extends Controller
         $data = [];//To be sent to the view
         $data["videogames"] = Videogame::all()->sortByDesc('id');
 
-        return view('activities.list')->with("data", $data);
+        return view('admin.videogame.list')->with("data", $data);
     }
 }
