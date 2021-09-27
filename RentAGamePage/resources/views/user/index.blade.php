@@ -126,11 +126,16 @@
                                     <!-- Portfolio Modal - Image-->
                                     <img class="img-fluid rounded mb-5" src="{{ asset('uploads/videoGames/'.$videoGame->getPicture())}}" alt="image"  />
                                     <!-- Portfolio Modal - Text-->
-                                    <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
-                                    <button class="btn btn-primary" data-dismiss="modal">
-                                        <i class="fas fa-times fa-fw"></i>
-                                        Close Window
-                                    </button>
+                                        <h1 style="color:tomato"><b>{{ __('videogame.precio') }}: </b>{{ $videoGame->getPrice() }}</h1>
+                                        <p><b>{{ __('videogame.desarrollador') }}: </b>{{ $videoGame->getDeveloper() }}</p>
+                                        <p><b>{{ __('videogame.categoria') }}: </b>{{ $videoGame->getCategory() }}</p>
+                                        <p><b>{{ __('videogame.cantidadVenta') }}: </b>{{ $videoGame->getSaleStock() }}</p>
+                                        <p><b>{{ __('videogame.cantidadVenta') }}: </b>{{ $videoGame->getRentStock() }}</p>
+                                        <p><b>{{ __('videogame.keywords') }}</b>: {{ $videoGame->getKeyWords() }}</p>
+                                    
+                                        <a>
+                                            <button type="button" class="btn btn-danger">{{ __('cart.agregar') }}</button>
+                                        </a>
                                 </div>
                             </div>
                         </div>
