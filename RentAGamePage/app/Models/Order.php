@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Order extends Model
 {
-    //attributes id, date, address, bill, fullPrice, items, user, created_at, updated_at
+    //attributes id, date, address, fullPrice, items, user, created_at, updated_at
     public function getId()
     {
         return $this->attributes['id'];
@@ -35,16 +35,6 @@ class Order extends Model
     public function setAddress($address)
     {
         $this->attributes['address'] = $address;
-    }
-
-    public function getBill()
-    {
-        return $this->attributes['bill'];
-    }
-
-    public function setBill($bill)
-    {
-        $this->attributes['bill'] = $bill;
     }
 
     public function getFullPrice()

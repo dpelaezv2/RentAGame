@@ -11,7 +11,7 @@ class Videogame extends Model
     use HasFactory;
 
     //attributes id, title, developer, cetegory, price, used, 
-    //sale Stock, rentStock, KeyWords, picture, created_at, updated_at
+    //sale Stock, rentStock, KeyWords, picture, review, wishlist, item created_at, updated_at
     protected $fillable = ['title', 'developer', 'category', 'price', 'used', 'saleStock', 'rentStock', 'keyWords', 'picture'];
 
     public function getId()
@@ -104,9 +104,19 @@ class Videogame extends Model
         $this->attributes['keyWords'] = $keyWords;
     }
 
-    public function comments()
+    public function reviews()
     {
-        return $this->hasMany(Comment::class);
+        return $this->hasMany(Review::class);
+    }
+
+    public function items()
+    {
+        return $this->hasMany(Item::class);
+    }
+
+    public function orders()
+    {
+        return $this->hasMany(Order::class);
     }
 
     public function getPicture()
