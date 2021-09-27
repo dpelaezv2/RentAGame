@@ -10,10 +10,13 @@ class CreateItemTable extends Migration
     {
         Schema::create('items', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('amount');
             $table->double('fullPrice');
-            $table->boolean('forRent');
+            $table->string('forRent');
             $table->integer('rentTime');
+            $table->bigInteger('order')->unsigned();
+            $table->foreign('order')->references('id')->on('orders');
+            $table->bigInteger('videoGame')->unsigned();
+            $table->foreign('videoGame')->references('id')->on('videogames');
             $table->timestamps();
         });
     }
