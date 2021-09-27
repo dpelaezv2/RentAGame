@@ -1,6 +1,5 @@
 <?php
 
-
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
@@ -11,37 +10,7 @@ use Illuminate\Http\Response;
 
 
 class VideoGameController extends Controller
-{
-
-    public function create()
-    {
-        return view('admin.videogame.create');
-    }
-
-    public function save(Request $request)
-    {
-        $videoGame = new Videogame();
-        $videoGame->title = $request->input('title');
-        $videoGame->developer = $request->input('developer');
-        $videoGame->category = $request->input('category');
-        $videoGame->price = $request->input('price');
-        $videoGame->used = $request->input('used');
-        $videoGame->saleStock = $request->input('saleStock');
-        $videoGame->rentStock = $request->input('rentStock');
-        $videoGame->KeyWords = $request->input('keyWords');
-        if($request->hasFile('picture'))
-        {
-            $file = $request->file('picture');
-            $extention = $file->getClientOriginalExtension();
-            $fileName = time().'.'.$extention;
-            $file->move('uploads/videoGames/', $fileName);
-            $videoGame->image = $fileName;
-        }
-        $videoGame->save();
-
-        return back()->with('success','Videogame added successfully!');
-    }
- 
+{ 
     public function show($id)
     {
         $data = []; //to be sent to the view
@@ -66,25 +35,4 @@ class VideoGameController extends Controller
         $data = Videogame::all()->sortByDesc('id');
         return view('user.index', compact('data'));
     }
-
-    public function adminList()
-    {
-        $data = []; //to be sent to the view
-        $data["title"] = "Lista de Juegos";
-        $data["videogames"] = Videogame::all();
-        return view('admin.videogame.list')->with("data",$data);
-    }
-
-    public function delete(Request $request)
-    {
-        $id = $request->VGid;
-        $videogame = Videogame::find($id);
-        $videogame->delete();
-
-        $data = [];//To be sent to the view
-        $data["videogames"] = Videogame::all()->sortByDesc('id');
-
-        return view('activities.list')->with("data", $data);
-    }
-
 }

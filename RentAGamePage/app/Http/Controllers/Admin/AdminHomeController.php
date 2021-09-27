@@ -16,7 +16,7 @@ class AdminHomeController extends Controller
         {
             if (Auth::user()->getAdmin() == 0) 
             {
-                return redirect()->route('home.index');
+                return redirect()->route('videogame.list');
             }
             return $next($request);
         });
