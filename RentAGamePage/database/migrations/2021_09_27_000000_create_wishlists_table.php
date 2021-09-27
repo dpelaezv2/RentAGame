@@ -8,7 +8,7 @@ class CreateWishlistsTable extends Migration
 {
     public function up()
     {
-        Schema::create('wishlists', function (Blueprint $table) {
+        Schema::create('whislists', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->timestamps();
         });
@@ -21,6 +21,6 @@ class CreateWishlistsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('whishlists');
+        Schema::dropIfExists('whislists');
     }
 }
