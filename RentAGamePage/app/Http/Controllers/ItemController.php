@@ -18,7 +18,6 @@ class ItemController extends Controller
         $forRent = $request->session()->get("forRent");
         $id = $request->videoGameId;
         $videoGames[$id] = $id;
-        echo($id);
         $forRent[$id] = $request->forRent;
         $request->session()->put('videoGames', $videoGames);
         $request->session()->put('forRent', $forRent);

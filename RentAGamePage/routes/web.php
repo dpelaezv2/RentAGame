@@ -29,5 +29,3 @@ Route::get('/cart-delete', 'App\Http\Controllers\CartController@delete')->name("
 Route::get('/cart-show', 'App\Http\Controllers\CartController@showCart')->name("user.cart.show");
 Route::get('/order-buy', 'App\Http\Controllers\OrderController@buy')->name("user.buy");
 Route::post('/videogame/add-cart', 'App\Http\Controllers\ItemController@add')->name("videogame.add-cart");
-
-Route::post('/videogame/add-cart/{id}', 'App\Http\Controllers\ItemController@add')->name("videogame.add-cart");
