@@ -133,18 +133,8 @@
                                         <p><b>{{ __('videogame.cantidadVenta') }}: </b>{{ $videoGame->getRentStock() }}</p>
                                         <p><b>{{ __('videogame.keywords') }}</b>: {{ $videoGame->getKeyWords() }}</p>
                                         <p> {{ $videoGame->getId() }}</p>
-                                        <form method="POST" action="{{ route('videogame.add-cart') }}">
-                                        @csrf
-                                        <div class="input-group mb-3">
-                                            <select name="forRent" id="inputState" class="form-control">
-                                                <option selected>{{ __('videogame.venta') }}</option>
-                                                <option>{{ __('videogame.renta') }}</option>
-                                            </select>
-                                        </div>
-                                        <div class="row justify-content-center" >
-                                            <input type="hidden" value="{{ $videoGame->getId() }}" name="videoGameId">
-                                            <button type="submit" class="btn btn-primary">{{ __('cart.agregar') }}</button>
-                                         </div>
+                                        <p><a href="{{ route('videoGame.add-cart', ['id'=> $videoGame->getId(), 'forRent' => "Para rentar"]) }}">{{ __('user.rent') }}</a></p>
+                                        <p><a href="{{ route('videoGame.add-cart', ['id'=> $videoGame->getId(), 'forRent' => "Para vender"]) }}">{{ __('user.buy') }}</a></p>
                                 </div>
                             </div>
                         </div>
