@@ -91,6 +91,6 @@ class AdminVideoGameController extends Controller
         $data = [];//To be sent to the view
         $data["videogames"] = Videogame::all()->sortByDesc('id');
 
-        return view('activities.list')->with("data", $data);
+        return view('admin.videogame.list')->with("data", $data);
     }
 }
