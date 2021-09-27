@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Item extends Model
 {
-    //attributes id, amount, fullPrice, forRent, rentTime, order, videoGame, created_at, updated_at
+    //attributes id, fullPrice, forRent, rentTime, order, videoGame, created_at, updated_at
     public function getId()
     {
         return $this->attributes['id'];
@@ -15,16 +15,6 @@ class Item extends Model
     public function setId($id)
     {
         $this->attributes['id'] = $id;
-    }
-
-    public function getSAmount()
-    {
-        return $this->attributes['amount'];
-    }
-
-    public function setAmount($amount)
-    {
-        $this->attributes['amount'] = $amount;
     }
 
     public function getFullPrice()

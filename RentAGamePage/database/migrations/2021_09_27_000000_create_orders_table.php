@@ -13,7 +13,6 @@ class CreateOrderTable extends Migration
             $table->double('fullPrice');
             $table->date('date');
             $table->string('address');
-            $table->boolean('bill')->nullable();
             $table->timestamps();
         });
     }
