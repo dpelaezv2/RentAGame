@@ -15,7 +15,7 @@ class AdminUserController extends Controller
     {
         $this->middleware('auth');
         $this->middleware(function ($request, $next) {
-            if (Auth::user()->getAdmin() == 0) {
+            if (Auth::user()->getAdmin() != 1) {
                 return redirect()->route('videogame.list');
             }
             return $next($request);
