@@ -14,5 +14,6 @@ return [
     'keywords' => 'Palabras clave',
     'imagen' => 'Imagen',
     'guardar' => 'Guardar Video Juego',
-
+    'renta' => 'Rentar',
+    'venta' => 'Comprar'
 ];

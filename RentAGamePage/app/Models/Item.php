@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Item extends Model
 {
-    //attributes id, fullPrice, forRent, rentTime, order, videoGame, created_at, updated_at
+    //attributes id, fullPrice, forRent, rentTime, order_id, videoGame_id, created_at, updated_at
     public function getId()
     {
         return $this->attributes['id'];
@@ -49,22 +49,22 @@ class Item extends Model
 
     public function getOrder()
     {
-        return $this->attributes['order'];
+        return $this->attributes['order_id'];
     }
 
     public function setOrder($order)
     {
-        $this->attributes['order'] = $order;
+        $this->attributes['order_id'] = $order;
     }
 
     public function getVideoGame()
     {
-        return $this->attributes['videoGame'];
+        return $this->attributes['videoGame_id'];
     }
 
     public function setVideoGame($videoGame)
     {
-        $this->attributes['videoGame'] = $videoGame;
+        $this->attributes['videoGame_id'] = $videoGame;
     }
 
     public function videoGame(){

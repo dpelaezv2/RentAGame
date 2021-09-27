@@ -12,7 +12,7 @@ class Videogame extends Model
 
     //attributes id, title, developer, cetegory, price, used, 
     //sale Stock, rentStock, KeyWords, picture, review, wishlist, item created_at, updated_at
-    protected $fillable = ['title', 'developer', 'category', 'price', 'used', 'saleStock', 'rentStock', 'keyWords', 'picture'];
+    protected $fillable = ['title', 'developer', 'category', 'price', 'saleStock', 'rentStock', 'keyWords', 'picture'];
 
     public function getId()
     {
