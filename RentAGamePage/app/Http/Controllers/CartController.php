@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Book;
+use App\Models\VideoGame;
 use App\Models\Order;
 use App\Models\Item;
 use Illuminate\Support\Facades\Auth;
