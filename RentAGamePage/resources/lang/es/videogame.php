@@ -2,9 +2,9 @@
 
 return [
 
-    'precio' => 'Precio:',
-    'cantidadVenta' => 'Stock de juegos para venta:',
-    'cantidadRenta' => 'Stock de juegos para renta:',
+    'precio' => 'Precio',
+    'cantidadVenta' => 'Stock de juegos para venta',
+    'cantidadRenta' => 'Stock de juegos para renta',
     'borrar' => 'Borrar',
     'crearTitulo' => 'Añadir Video Juego',
     'titulo' => 'Título',

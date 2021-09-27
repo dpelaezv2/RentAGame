@@ -39,7 +39,6 @@ class VideoGameController extends Controller
         }
         $videoGame->save();
 
-        
         return back()->with('success','Videogame added successfully!');
     }
  
@@ -65,10 +64,10 @@ class VideoGameController extends Controller
     public function list()
     {
         $data = Videogame::all()->sortByDesc('id');
-        return view('home.index', compact('data'));
+        return view('user.index', compact('data'));
     }
 
-    public function amdinList()
+    public function adminList()
     {
         $data = []; //to be sent to the view
         $data["title"] = "Lista de Juegos";

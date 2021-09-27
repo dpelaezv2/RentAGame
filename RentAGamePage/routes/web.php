@@ -13,11 +13,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 Auth::routes();
-Route::get('/', 'App\Http\Controllers\HomeController@list')->name("home.index");
+Route::get('/', 'App\Http\Controllers\HomeController@index')->name("home.index");
 Route::get('/home', 'App\Http\Controllers\HomeController@index')->name('home');
 Route::get('/admin', 'App\Http\Controllers\Admin\AdminHomeController@index')->name("admin.home.index");
 Route::get('/add-videogame', 'App\Http\Controllers\VideoGameController@create')->name("admin.videogame.create");
-Route::get('/videogames-list', 'App\Http\Controllers\VideoGameController@list')->name("admin.videogame.list");
+Route::get('/videogames-list', 'App\Http\Controllers\VideoGameController@list')->name("videogame.list");
+Route::get('/admin-videogames-list', 'App\Http\Controllers\VideoGameController@adminList')->name("admin.videogame.list");
+Route::Post('/admin-videogames-delete', 'App\Http\Controllers\VideoGameController@delete')->name("admin.videogame.delete");
 Route::get('/users-list', 'App\Http\Controllers\Admin\AdminUserController@list')->name("admin.user.list");
 Route::get('/user-create', 'App\Http\Controllers\Admin\AdminUserController@create')->name("admin.user.create");
 Route::Post('/user-delete', 'App\Http\Controllers\Admin\AdminUserController@delete')->name("admin.user.delete");
