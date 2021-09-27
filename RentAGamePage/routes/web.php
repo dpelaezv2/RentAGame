@@ -24,8 +24,8 @@ Route::get('/users-list', 'App\Http\Controllers\Admin\AdminUserController@list')
 Route::get('/user-create', 'App\Http\Controllers\Admin\AdminUserController@create')->name("admin.user.create");
 Route::Post('/user-delete', 'App\Http\Controllers\Admin\AdminUserController@delete')->name("admin.user.delete");
 Route::Post('/user-save', 'App\Http\Controllers\Admin\AdminUserController@save')->name("admin.user.save");
-Route::post('/add-videogame', 'App\Http\Controllers\Admin\AdminVideoGameController@save')->name("admin.videogame.save");
+Route::Post('/add-videogame', 'App\Http\Controllers\Admin\AdminVideoGameController@save')->name("admin.videogame.save");
 Route::get('/cart-delete', 'App\Http\Controllers\CartController@delete')->name("user.cart.delete");
 Route::get('/cart-show', 'App\Http\Controllers\CartController@showCart')->name("user.cart.show");
 Route::get('/order-buy', 'App\Http\Controllers\OrderController@buy')->name("user.buy");
-Route::post('/videogame/add-cart', 'App\Http\Controllers\ItemController@add')->name("videogame.add-cart");
+Route::get('/videogame/add-cart/{id}/{forRent}', 'App\Http\Controllers\ItemController@add')->name("videoGame.add.cart");
