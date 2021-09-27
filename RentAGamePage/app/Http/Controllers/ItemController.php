@@ -12,11 +12,13 @@ use Carbon\Carbon;
 
 class ItemController extends Controller
 {
-    public function add($id, Request $request)
+    public function add(Request $request)
     {
         $videoGames = $request->session()->get("videoGames");
         $forRent = $request->session()->get("forRent");
+        $id = $request->videoGameId;
         $videoGames[$id] = $id;
+        echo($id);
         $forRent[$id] = $request->forRent;
         $request->session()->put('videoGames', $videoGames);
         $request->session()->put('forRent', $forRent);
