@@ -118,7 +118,6 @@ class Videogame extends Model
     {
         $this->attributes['picture'] = $picture;
     }
-
     public static function validate(Request $request)
     {
         $request->validate(

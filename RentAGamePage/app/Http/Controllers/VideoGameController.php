@@ -68,6 +68,14 @@ class VideoGameController extends Controller
         return view('home.index', compact('data'));
     }
 
+    public function amdinList()
+    {
+        $data = []; //to be sent to the view
+        $data["title"] = "Lista de Juegos";
+        $data["videogames"] = Videogame::all();
+        return view('admin.videogame.list')->with("data",$data);
+    }
+
     public function delete(Request $request)
     {
         $id = $request->VGid;
