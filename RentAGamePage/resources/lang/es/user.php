@@ -3,6 +3,8 @@
 return [
 
     'inicioTitulo' => '¡Bienvenido a RentAGame!',
-    'inicio' => ''
-
+    'inicio' => 'Esat es una página donde puedes comprar y rentar tus videojuegos favoritos!',
+    'deleteCart' => 'Borrar mi carrito',
+    'buy' => 'Comprar',
+    'renta' => 'Es para:',
 ];

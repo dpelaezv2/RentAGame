@@ -27,7 +27,7 @@ class CartController extends Controller
             $data["forRent"] = array();
         }
 
-        return view('cart.showCart')->with("data",$data);
+        return view('user.cart.show')->with("data",$data);
     }
 
     public function delete(Request $request)
