@@ -28,3 +28,6 @@ Route::post('/add-videogame', 'App\Http\Controllers\Admin\AdminVideoGameControll
 Route::get('/cart-delete', 'App\Http\Controllers\CartController@delete')->name("user.cart.delete");
 Route::get('/cart-show', 'App\Http\Controllers\CartController@showCart')->name("user.cart.show");
 Route::get('/order-buy', 'App\Http\Controllers\OrderController@buy')->name("user.buy");
+Route::post('/videogame/add-cart/{id}', 'App\Http\Controllers\ItemController@add')->name("videogame.add-cart");
+
+
