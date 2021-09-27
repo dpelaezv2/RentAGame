@@ -25,4 +25,5 @@ Route::get('/user-create', 'App\Http\Controllers\Admin\AdminUserController@creat
 Route::Post('/user-delete', 'App\Http\Controllers\Admin\AdminUserController@delete')->name("admin.user.delete");
 Route::Post('/user-save', 'App\Http\Controllers\Admin\AdminUserController@save')->name("admin.user.save");
 Route::post('/add-videogame', 'App\Http\Controllers\Admin\AdminVideoGameController@save')->name("admin.videogame.save");
+Route::post('/videogame/add-cart/{id}', 'App\Http\Controllers\ItemController@add')->name("videogame.add-cart");
 

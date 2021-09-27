@@ -25,13 +25,6 @@
                 <input type="text" name="price", class="form-control">
             </div>
             <div class="form-group mb - 3">
-                <p>{{ __('videogame.uso') }}</p>
-                    <select name="used" id="inputState" class="form-control">
-                        <option selected>True</option>
-                        <option>False</option>
-                    </select>
-            </div>
-            <div class="form-group mb - 3">
                 <label for="">{{ __('videogame.cantidadVenta') }}</label>
                 <input type="number" name="saleStock", class="form-control">
             </div>

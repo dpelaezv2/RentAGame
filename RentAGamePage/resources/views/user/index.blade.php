@@ -132,10 +132,18 @@
                                         <p><b>{{ __('videogame.cantidadVenta') }}: </b>{{ $videoGame->getSaleStock() }}</p>
                                         <p><b>{{ __('videogame.cantidadVenta') }}: </b>{{ $videoGame->getRentStock() }}</p>
                                         <p><b>{{ __('videogame.keywords') }}</b>: {{ $videoGame->getKeyWords() }}</p>
-                                    
-                                        <a>
-                                            <button type="button" class="btn btn-danger">{{ __('cart.agregar') }}</button>
-                                        </a>
+
+                                        <form method="POST" action="{{ route('videogame.add-cart', ['id' => $videoGame->getId()]) }}">
+                                        @csrf
+                                        <div class="input-group mb-3">
+                                            <select name="forRent" id="inputState" class="form-control">
+                                                <option selected>{{ __('videogame.venta') }}</option>
+                                                <option>{{ __('videogame.renta') }}</option>
+                                            </select>
+                                        </div>
+                                        <div class="input-group">
+                                            <button type="submit" class="btn btn-primary">{{ __('cart.agregar') }}</button>
+                                         </div>
                                 </div>
                             </div>
                         </div>
