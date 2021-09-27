@@ -4,10 +4,10 @@
 
     <div class="row row-cols-1 row-cols-md-3 g-4">
     <div calss="card-header">
-        <h4>Añadir VideoGame</h4>
     </div>
     <div class="card-body">
-        <form action="" method = "POST" enctype="multipart/form-data">
+        <form action="{{url('add-videogame')}}" method = "POST" enctype="multipart/form-data">
+        @csrf
             <div class="form-group mb - 3">
                 <label for="">Title</label>
                 <input type="text" name="title", class="form-control">
