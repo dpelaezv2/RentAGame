@@ -158,8 +158,9 @@
                                         <p><b>{{ __('videogame.cantidadVenta') }}: </b>{{ $videoGame->getSaleStock() }}</p>
                                         <p><b>{{ __('videogame.cantidadVenta') }}: </b>{{ $videoGame->getRentStock() }}</p>
                                         <p><b>{{ __('videogame.keywords') }}</b>: {{ $videoGame->getKeyWords() }}</p>
-                                        <p><a href="{{ route('videoGame.add.cart', ['id'=> $videoGame->getId(), 'forRent' => "Para rentar"]) }}">{{ __('user.rent') }}</a></p>
-                                        <p><a href="{{ route('videoGame.add.cart', ['id'=> $videoGame->getId(), 'forRent' => "Para vender"]) }}">{{ __('user.buy') }}</a></p>
+                                        <p><a href="{{ route('videoGame.add-cart', ['id'=> $videoGame->getId(), 'forRent' => "Para rentar"]) }}">{{ __('user.rent') }}</a></p>
+                                        <p><a href="{{ route('videoGame.add-cart', ['id'=> $videoGame->getId(), 'forRent' => "Para vender"]) }}">{{ __('user.buy') }}</a></p>
+                                        <p><a href="{{ route('review.see', ['id'=> $videoGame->getId()]) }}">{{ __('review.ver') }}</a></p>
                                 </div>
                             </div>
                         </div>
