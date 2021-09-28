@@ -71,7 +71,8 @@ INSERT INTO `videogames` (`id`, `title`, `developer`, `category`, `price`, `sale
 (2, 'Epic Mickey', 'Disney', 'Fantasia', 40000, 5, 2, 'Disney Magia Niños', '1632748585.jpg', '2021-09-27 18:16:25', '2021-09-27 18:16:25'),
 (5, 'Rocket Leave', 'Psyonix', 'Carros', 90000, 1, 2, 'Futbol Multijugador', '1632748964.webp', '2021-09-27 18:22:44', '2021-09-27 18:22:44'),
 (6, 'Mario Kart 8', 'Nintendo', 'Carreras', 70000, 4, 3, 'Mario Multijugador Familia', '1632752292.jpg', '2021-09-27 19:18:12', '2021-09-27 19:18:12');
-
+(7, 'Need For Speed Rivals', 'EA', 'Carreras', 30000, 23, 45, 'carros policia', '1632810114.jpg', '2021-09-28 11:21:54', '2021-09-28 11:21:54'),
+(8, 'Zelda Breath of The Wild', 'Nintendo', 'Fantasia', 100000, 12, 54, 'magia mundo animales', '1632810284.jpg', '2021-09-28 11:24:44', '2021-09-28 11:24:44');
 --
 -- AUTO_INCREMENT for dumped tables
 --

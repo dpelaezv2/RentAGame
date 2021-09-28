@@ -12,6 +12,14 @@
         </div>
         <div class="row justify-content-center">
             <div class="portfolio-item mx-auto">
+                <form method="GET" action="{{ route('videogame.filterPrice') }}">
+                    <button type="submit" class="btn btn-primary">{{ __('user.filterPrice') }}</button>
+                </form><br>
+                <form method="GET" action="{{ route('videogame.filterCategory') }}">
+                    <button type="submit" class="btn btn-primary">{{ __('user.filterCategory') }}</button>
+                </form><br>
+            </div>
+            <div class="portfolio-item mx-auto">
             <form method="GET" action="{{ route('user.cart.show') }}">
                 <button type="submit" class="btn btn-primary">{{ __('user.cart') }}</button>
             </form><br>
@@ -150,7 +158,6 @@
                                         <p><b>{{ __('videogame.cantidadVenta') }}: </b>{{ $videoGame->getSaleStock() }}</p>
                                         <p><b>{{ __('videogame.cantidadVenta') }}: </b>{{ $videoGame->getRentStock() }}</p>
                                         <p><b>{{ __('videogame.keywords') }}</b>: {{ $videoGame->getKeyWords() }}</p>
-                                        <p> {{ $videoGame->getId() }}</p>
                                         <p><a href="{{ route('videoGame.add.cart', ['id'=> $videoGame->getId(), 'forRent' => "Para rentar"]) }}">{{ __('user.rent') }}</a></p>
                                         <p><a href="{{ route('videoGame.add.cart', ['id'=> $videoGame->getId(), 'forRent' => "Para vender"]) }}">{{ __('user.buy') }}</a></p>
                                 </div>

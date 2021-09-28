@@ -38,7 +38,6 @@ class AdminVideoGameController extends Controller
         $videoGame->developer = $request->input('developer');
         $videoGame->category = $request->input('category');
         $videoGame->price = $request->input('price');
-        $videoGame->used = $request->input('used');
         $videoGame->saleStock = $request->input('saleStock');
         $videoGame->rentStock = $request->input('rentStock');
         $videoGame->KeyWords = $request->input('keyWords');

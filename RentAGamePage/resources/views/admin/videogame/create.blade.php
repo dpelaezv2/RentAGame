@@ -6,6 +6,11 @@
     <div calss="card-header">
     </div>
     <div class="card-body">
+        <div class="portfolio-item mx-auto">
+            <form method="GET" action="{{ route('admin.home.index') }}">
+                <button type="submit" class="btn btn-primary">{{ __('admin.inicio') }}</button>
+            </form><br>
+            </div>
         <form action="{{url('add-videogame')}}" method = "POST" enctype="multipart/form-data">
         @csrf
             <div class="form-group mb - 3">
