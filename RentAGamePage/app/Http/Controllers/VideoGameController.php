@@ -47,13 +47,4 @@ class VideoGameController extends Controller
         $data = Videogame::all()->sortBy('category');
         return view('user.index')->with("data",$data);
     }
-
-    public function showReviews($id)
-    {
-        $reviews = [];
-        $reviews['reviews'] = Review::where('videoGame_id', $id)->get();
-        $reviews['game'] = $id;
-        return view('user.reviews')->with("data", $reviews);
-    }
-
 }
