@@ -29,7 +29,7 @@
                             <label>{{ __('admin.admin') }}?</label>
                             <input type="text" class="form-control" name="admin" value="{{ old('admin') }}">
                         </div>
-                        <button type="submit" class="btn btn-primary">{{ __('admin.crear') }}</button>
+                        <button type="submit" class="btn btn-primary">{{ __('admin.crearUsuario') }}</button>
                     </form>
                 </div>
             </div>

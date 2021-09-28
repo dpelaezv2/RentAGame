@@ -8,4 +8,9 @@ return [
     'buy' => 'Comprar',
     'rent' => 'Rentar',
     'renta' => 'Es para:',
+    'back' => 'Atrás',
+    'cart' => 'Mi carrito',
+    'wishlist' => 'Wishlist',
+    'addWishlist' => 'Agregar a mi Wishlist',
+
 ];

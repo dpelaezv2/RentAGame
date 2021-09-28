@@ -8,8 +8,10 @@ class CreateWishlistsTable extends Migration
 {
     public function up()
     {
-        Schema::create('whislists', function (Blueprint $table) {
+        Schema::create('wishlists', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->integer('videoGameId')->default('0');
+            $table->integer('userId')->default('0');
             $table->timestamps();
         });
     }
@@ -21,6 +23,6 @@ class CreateWishlistsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('whislists');
+        Schema::dropIfExists('wishlists');
     }
 }

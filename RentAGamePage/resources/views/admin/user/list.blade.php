@@ -7,7 +7,7 @@
         <div class="row justify-content-center">
             <form method="GET" action="{{ route('admin.user.create') }}">
                 <button type="submit" class="btn btn-primary">{{ __('admin.crearUsuario') }}</button>
-            </form><br>           
+            </form><br><br>           
         </div>
         <div class="row row-cols-1 row-cols-md-3 g-4">
             @foreach($data["users"] as $user)
