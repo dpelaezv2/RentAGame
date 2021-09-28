@@ -28,4 +28,6 @@ Route::Post('/add-videogame', 'App\Http\Controllers\Admin\AdminVideoGameControll
 Route::get('/cart-delete', 'App\Http\Controllers\CartController@delete')->name("user.cart.delete");
 Route::get('/cart-show', 'App\Http\Controllers\CartController@showCart')->name("user.cart.show");
 Route::get('/order-buy', 'App\Http\Controllers\OrderController@buy')->name("user.buy");
-Route::get('/videogame/add-cart/{id}/{forRent}', 'App\Http\Controllers\ItemController@add')->name("videoGame.add-cart");
+Route::get('/videogame/add-cart/{id}/{forRent}', 'App\Http\Controllers\ItemController@add')->name("videoGame.add.cart");
+Route::get('/wishlist-show', 'App\Http\Controllers\WishlistController@show')->name("user.wishlist.show");
+Route::Post('/wishlist-add', 'App\Http\Controllers\WishlistController@add')->name("user.wishlist.add");

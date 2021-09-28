@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Product;
 use App\Models\Videogame;
 use Illuminate\Support\Facades;
 use Illuminate\Http\Response;
@@ -33,6 +32,6 @@ class VideoGameController extends Controller
     public function list()
     {
         $data = Videogame::all();
-        return view('user.index', compact('data'));
+        return view('user.index')->with("data",$data);
     }
 }

@@ -15,19 +15,20 @@ class CartController extends Controller
     public function showCart(Request $request)
     {
         $data = []; //to be sent to the view
+        $rent = [];
         $ids = $request->session()->get("videoGames"); //obtenemos ids de productos guardados en session
         $rent = $request->session()->get("forRent");
         if($ids)
         {
             $data["videoGames"] = VideoGame::find(array_values($ids));
-            $data["forRent"] = $rent;
+            //$rent["forRent"] = $forRent;
         }else
         {
             $data["videoGames"] = array();
-            $data["forRent"] = array();
+            //$rent["forRent"] = array();
         }
 
-        return view('user.cart.show')->with("data",$data);
+        return view('user.cart.show')->with("data",$data)->with("rent",$rent);
     }
 
     public function delete(Request $request)
