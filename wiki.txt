@@ -1,0 +1,11 @@
+El proyecto consiste en una tienda virtual de videojuegos que permita además de comprar juegos usados o nuevos, alquilar los juegos por un tiempo determinado por un menor precio. El alcance que queremos lograr es una página web totalmente funcional que nos permita comprar y alquilar juegos añadiéndolos a nuestro carrito de compras y poder dar y ver reviews de los juegos. Los actores involucrados seríamos nosotros como proveedores y los usuarios como compradores. El beneficio de la propuesta de alquiler es que los usuarios podrán jugar más juegos con menos dinero, lo que haría más atractiva nuestra tienda sobre otras. 
+
+Entrega: https://eafit.sharepoint.com/:w:/r/sites/Section_ST02610012/Class%20Files/Assignments/Entrega%20proyecto%2001/Entrega%20proyecto%2001.docx?d=w005a91d3420044f1a6ac1d25757f094e&csf=1&web=1&e=aSVVYE
+
+Guía de estilo: https://eafit-my.sharepoint.com/:w:/g/personal/dpelaezv2_eafit_edu_co/EUn9cKurcnxJn1hAB43KaUABCUshd8oQkW3E5nA2hzT_lw?e=bW4cVA
+
+Reglas de pogramación: https://eafit-my.sharepoint.com/:w:/g/personal/dpelaezv2_eafit_edu_co/EQUoWfHy0bJIu17l3G0j_RMBpxUGiZ5FrqDLW3MaZ2EpsA?e=y0472Z
+
+Funcionalidades interesantes: https://eafit-my.sharepoint.com/:w:/g/personal/dpelaezv2_eafit_edu_co/EcZP7p3ODPpCrxj1YwDEUZIBYGbGBgO7X3g-bW8BbQOflw?e=NDhBgk
+
+pantallazos: https://eafit-my.sharepoint.com/:w:/g/personal/dpelaezv2_eafit_edu_co/EQ6L3UOcDNBFgKtpeXPGVnMBJRiddQjqI4OQs-_KfbqnfQ?e=wRYcoM
