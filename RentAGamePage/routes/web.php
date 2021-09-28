@@ -18,6 +18,8 @@ Route::get('/home', 'App\Http\Controllers\HomeController@index')->name('home');
 Route::get('/admin', 'App\Http\Controllers\Admin\AdminHomeController@index')->name("admin.home.index");
 Route::get('/add-videogame', 'App\Http\Controllers\Admin\AdminVideoGameController@create')->name("admin.videogame.create");
 Route::get('/videogames-list', 'App\Http\Controllers\VideoGameController@list')->name("videogame.list");
+Route::get('/videogames-filter-price', 'App\Http\Controllers\VideoGameController@filterPrice')->name("videogame.filterPrice");
+Route::get('/videogames-filter-category', 'App\Http\Controllers\VideoGameController@filterCategory')->name("videogame.filterCategory");
 Route::get('/admin-videogames-list', 'App\Http\Controllers\Admin\AdminVideoGameController@adminList')->name("admin.videogame.list");
 Route::Post('/admin-videogames-delete', 'App\Http\Controllers\Admin\AdminVideoGameController@delete')->name("admin.videogame.delete");
 Route::get('/users-list', 'App\Http\Controllers\Admin\AdminUserController@list')->name("admin.user.list");
@@ -31,3 +33,7 @@ Route::get('/order-buy', 'App\Http\Controllers\OrderController@buy')->name("user
 Route::get('/videogame/add-cart/{id}/{forRent}', 'App\Http\Controllers\ItemController@add')->name("videoGame.add-cart");
 Route::get('/see-review/{id}', 'App\Http\Controllers\VideoGameController@showReviews')->name("review.see");
 Route::Post('/add-review', 'App\Http\Controllers\ReviewController@add')->name("review.add");
+Route::get('/videogame/add-cart/{id}/{forRent}', 'App\Http\Controllers\ItemController@add')->name("videoGame.add.cart");
+Route::get('/wishlist-show', 'App\Http\Controllers\WishlistController@show')->name("user.wishlist.show");
+Route::Post('/wishlist-add', 'App\Http\Controllers\WishlistController@add')->name("user.wishlist.add");
+

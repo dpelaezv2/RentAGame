@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Product;
 use App\Models\Review;
 use App\Models\Videogame;
 use Illuminate\Support\Facades;
@@ -34,7 +33,19 @@ class VideoGameController extends Controller
     public function list()
     {
         $data = Videogame::all();
-        return view('user.index', compact('data'));
+        return view('user.index')->with("data",$data);
+    }
+
+    public function filterPrice()
+    {
+        $data = Videogame::all()->sortByDesc('price');
+        return view('user.index')->with("data",$data);
+    }
+
+    public function filterCategory()
+    {
+        $data = Videogame::all()->sortBy('category');
+        return view('user.index')->with("data",$data);
     }
 
     public function showReviews($id)

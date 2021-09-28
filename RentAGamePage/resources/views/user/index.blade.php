@@ -5,12 +5,30 @@
 <section class="page-section portfolio" id="portfolio">
     <div class="container">
         <!-- Portfolio Section Heading-->
-        <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">{{ __('admin.menu') }}</h2>
+        <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">{{ __('user.inicioTitulo') }}</h2>
         <!-- Icon Divider-->
         <div class="divider-custom">
             <div class="divider-custom-line"></div>
-            <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-            <div class="divider-custom-line"></div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="portfolio-item mx-auto">
+                <form method="GET" action="{{ route('videogame.filterPrice') }}">
+                    <button type="submit" class="btn btn-primary">{{ __('user.filterPrice') }}</button>
+                </form><br>
+                <form method="GET" action="{{ route('videogame.filterCategory') }}">
+                    <button type="submit" class="btn btn-primary">{{ __('user.filterCategory') }}</button>
+                </form><br>
+            </div>
+            <div class="portfolio-item mx-auto">
+            <form method="GET" action="{{ route('user.cart.show') }}">
+                <button type="submit" class="btn btn-primary">{{ __('user.cart') }}</button>
+            </form><br>
+            </div>
+            <div class="portfolio-item mx-auto">
+            <form method="GET" action="{{ route('user.wishlist.show') }}">
+                <button type="submit" class="btn btn-primary">{{ __('user.wishlist') }}</button>
+            </form><br>
+            </div>
         </div>
         <!-- Portfolio Grid Items-->
         <div class="row">
@@ -126,13 +144,20 @@
                                     <!-- Portfolio Modal - Image-->
                                     <img class="img-fluid rounded mb-5" src="{{ asset('uploads/videoGames/'.$videoGame->getPicture())}}" alt="image"  />
                                     <!-- Portfolio Modal - Text-->
+                                        <form action="{{url('/wishlist-add')}}" method = "POST" enctype="multipart/form-data">
+                                            @csrf
+                                            <input type="hidden" value="{{ $videoGame->getId() }}" name="videoGameId">
+                                            <input type="hidden" value="{{ Auth::id() }}" name="userId">
+                                            <div class="form-group mb - 3">
+                                                <button type="submit" class="btn btn-primary">{{ __('user.addWishlist') }}</button>
+                                            </div>
+                                        </form>
                                         <h1 style="color:tomato"><b>{{ __('videogame.precio') }}: </b>{{ $videoGame->getPrice() }}</h1>
                                         <p><b>{{ __('videogame.desarrollador') }}: </b>{{ $videoGame->getDeveloper() }}</p>
                                         <p><b>{{ __('videogame.categoria') }}: </b>{{ $videoGame->getCategory() }}</p>
                                         <p><b>{{ __('videogame.cantidadVenta') }}: </b>{{ $videoGame->getSaleStock() }}</p>
                                         <p><b>{{ __('videogame.cantidadVenta') }}: </b>{{ $videoGame->getRentStock() }}</p>
                                         <p><b>{{ __('videogame.keywords') }}</b>: {{ $videoGame->getKeyWords() }}</p>
-                                        <p> {{ $videoGame->getId() }}</p>
                                         <p><a href="{{ route('videoGame.add-cart', ['id'=> $videoGame->getId(), 'forRent' => "Para rentar"]) }}">{{ __('user.rent') }}</a></p>
                                         <p><a href="{{ route('videoGame.add-cart', ['id'=> $videoGame->getId(), 'forRent' => "Para vender"]) }}">{{ __('user.buy') }}</a></p>
                                         <p><a href="{{ route('review.see', ['id'=> $videoGame->getId()]) }}">{{ __('review.ver') }}</a></p>

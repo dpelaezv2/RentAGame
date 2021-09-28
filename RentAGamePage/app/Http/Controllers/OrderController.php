@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Book;
+use App\Models\VideoGame;
 use App\Models\Order;
 use App\Models\Item;
 use Illuminate\Support\Facades\Auth;
@@ -24,7 +24,6 @@ class OrderController extends Controller
     {
         $data = []; //to be sent to the view
         $ids = $request->session()->get("videoGames"); //obtenemos ids de productos guardados en session
-        $rent = $request->session()->get("forRent");
         $total = 0;
         if($ids)
         {
@@ -38,25 +37,19 @@ class OrderController extends Controller
             {
                 $item = new Item();
                 $item->setOrder($order->getId());
-                $item->setForRent($rent[$videoGame->getId()]);
+                $item->setForRent(False);
                 $item->setRentTime(30);
                 $item->setVideoGame($videoGame->getId());
-                if($rent[$videoGame->getId()] == "True")
-                {
-                    $total = $total + (($videoGame->getPrice())/3);
-                    $item->setFullPrice((($videoGame->getPrice())/3));
-                } else
-                {
-                    $total = $total + $videoGame->getPrice();
-                    $item->setFullPrice($videoGame->getPrice());
-                }
+                $total = $total + $videoGame->getPrice();
+                $item->setFullPrice($videoGame->getPrice());
                 $item->save();
             }
             $order->setFullPrice($total);
             $order->save();
-
+            $data = $order->getFullPrice();
         } else
         {
         }
+        return view('user.cart.buy')->with("data",$data);
     }
 }

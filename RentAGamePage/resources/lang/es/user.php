@@ -8,4 +8,13 @@ return [
     'buy' => 'Comprar',
     'rent' => 'Rentar',
     'renta' => 'Es para:',
+    'back' => 'Atrás',
+    'cart' => 'Mi carrito',
+    'wishlist' => 'Wishlist',
+    'addWishlist' => 'Agregar a mi Wishlist',
+    'filterPrice' => 'Filtrar por precio',
+    'filterCategory' => 'Filtrar por Categoría',
+    'bill' => 'El total a pagar es:',
+    'home' => 'OK',
+    
 ];
