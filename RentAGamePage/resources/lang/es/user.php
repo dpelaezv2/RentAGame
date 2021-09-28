@@ -12,5 +12,9 @@ return [
     'cart' => 'Mi carrito',
     'wishlist' => 'Wishlist',
     'addWishlist' => 'Agregar a mi Wishlist',
-
+    'filterPrice' => 'Filtrar por precio',
+    'filterCategory' => 'Filtrar por Categoría',
+    'bill' => 'El total a pagar es:',
+    'home' => 'OK',
+    
 ];

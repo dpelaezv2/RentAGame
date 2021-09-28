@@ -15,5 +15,6 @@ return [
     'password' => 'Contraseña',
     'usuarios' => 'Ver lista de usuarios',
     'videojuegos' => 'Ver lista de Video Juegos',
+    'inicio' => 'Inicio',
 
 ];

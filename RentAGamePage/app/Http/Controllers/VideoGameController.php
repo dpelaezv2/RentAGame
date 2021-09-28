@@ -34,4 +34,16 @@ class VideoGameController extends Controller
         $data = Videogame::all();
         return view('user.index')->with("data",$data);
     }
+
+    public function filterPrice()
+    {
+        $data = Videogame::all()->sortByDesc('price');
+        return view('user.index')->with("data",$data);
+    }
+
+    public function filterCategory()
+    {
+        $data = Videogame::all()->sortBy('category');
+        return view('user.index')->with("data",$data);
+    }
 }
