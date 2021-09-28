@@ -135,6 +135,7 @@
                                         <p> {{ $videoGame->getId() }}</p>
                                         <p><a href="{{ route('videoGame.add-cart', ['id'=> $videoGame->getId(), 'forRent' => "Para rentar"]) }}">{{ __('user.rent') }}</a></p>
                                         <p><a href="{{ route('videoGame.add-cart', ['id'=> $videoGame->getId(), 'forRent' => "Para vender"]) }}">{{ __('user.buy') }}</a></p>
+                                        <p><a href="{{ route('review.see', ['id'=> $videoGame->getId()]) }}">{{ __('review.ver') }}</a></p>
                                 </div>
                             </div>
                         </div>

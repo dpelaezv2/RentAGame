@@ -29,3 +29,5 @@ Route::get('/cart-delete', 'App\Http\Controllers\CartController@delete')->name("
 Route::get('/cart-show', 'App\Http\Controllers\CartController@showCart')->name("user.cart.show");
 Route::get('/order-buy', 'App\Http\Controllers\OrderController@buy')->name("user.buy");
 Route::get('/videogame/add-cart/{id}/{forRent}', 'App\Http\Controllers\ItemController@add')->name("videoGame.add-cart");
+Route::get('/see-review/{id}', 'App\Http\Controllers\VideoGameController@showReviews')->name("review.see");
+Route::Post('/add-review', 'App\Http\Controllers\ReviewController@add')->name("review.add");
