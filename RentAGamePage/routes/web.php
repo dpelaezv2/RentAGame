@@ -30,9 +30,9 @@ Route::Post('/add-videogame', 'App\Http\Controllers\Admin\AdminVideoGameControll
 Route::get('/cart-delete', 'App\Http\Controllers\CartController@delete')->name("user.cart.delete");
 Route::get('/cart-show', 'App\Http\Controllers\CartController@showCart')->name("user.cart.show");
 Route::get('/order-buy', 'App\Http\Controllers\OrderController@buy')->name("user.buy");
-Route::get('/videogame/add-cart/{id}/{forRent}', 'App\Http\Controllers\ItemController@add')->name("videoGame.add-cart");
-Route::get('/see-review/{id}', 'App\Http\Controllers\VideoGameController@showReviews')->name("review.see");
-Route::Post('/add-review', 'App\Http\Controllers\ReviewController@add')->name("review.add");
+Route::get('/create-review/{id}', 'App\Http\Controllers\ReviewController@form')->name("review.crear");
+Route::get('/list-review/{id}', 'App\Http\Controllers\ReviewController@list')->name("review.list");
+Route::post('/add-review', 'App\Http\Controllers\ReviewController@add')->name("review.add");
 Route::get('/videogame/add-cart/{id}/{forRent}', 'App\Http\Controllers\ItemController@add')->name("videoGame.add.cart");
 Route::get('/wishlist-show', 'App\Http\Controllers\WishlistController@show')->name("user.wishlist.show");
 Route::Post('/wishlist-add', 'App\Http\Controllers\WishlistController@add')->name("user.wishlist.add");

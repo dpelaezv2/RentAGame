@@ -22,6 +22,16 @@ class Review extends Model
         $this->attributes['id'] = $id;
     }
 
+    public function getDescription()
+    {
+        return $this->attributes['description'];
+    }
+
+    public function setDescription($description)
+    {
+        $this->attributes['description'] = $description;
+    }
+
     public function getVideoGame_id()
     {
         return $this->attributes['videoGame_id'];
@@ -63,7 +73,7 @@ class Review extends Model
                 "description" => "required",
                 "videoGame_id" => "required",
                 "reviewDate" => "required",
-                "user" => "required",
+                "user_id" => "required",
             ]
         );
     }

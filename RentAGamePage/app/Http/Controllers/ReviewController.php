@@ -16,26 +16,29 @@ class ReviewController extends Controller
 {
     public function add(Request $request)
     {
-        Review::validate($request);
-        
-        $review = new Review();
-        $review->description = $request->input('description');
-        $review->videoGame_id = $request->input('videoGameId');
-        $review->reviewDate = $request->Carbon::today();
-        $review->reviewDate = $request->input('user');
-        $review->save();
-        
-        $data = [];
-        $data["reviews"] = Review::where('videoGame_id', $request->input('videoGameId'));
-        $reviews['game'] = $request->input('videoGameId');
-        return view('user.reviews')->with("data",$data);
+        //Review::validate($request);
+
+        Review::create([
+            'description' => $request->only(["description"])["description"],
+            'videoGame_id' => $request->only(["id"])["id"],
+            'reviewDate' => Carbon::today(),
+            'user_id' => Auth::id(),
+        ]);
+        return view('user.reviewSave');
     }
 
-    public function write($id)
+    public function list($id)
     {
-        $data = $id;
-        return view('user.writeReview')->with("data",$data);
+        $videoGame = VideoGame::findOrFail($id);
+        $data["review"] = $videoGame->reviews()->get();
+        $data["videoGame"] = $videoGame;
+        return view('user.reviewList')->with("data", $data);
     }
-
     
+    public function form($id)
+    {
+        $videoGame = VideoGame::findOrFail($id);
+        $data["videoGame"] = $videoGame;
+        return view('user.reviews')->with("data", $data);
+    }
 }

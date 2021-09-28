@@ -3,6 +3,10 @@ return [
 
 'descripcion' => 'Descripción',
 'go' => 'Enviar',
-'ver' => 'Ver reviews',
-'hacer' => 'Escribir una review'
+'ver' => 'Ver reviews de',
+'crear' => 'Crear review',
+'hacer' => 'Escribir una review',
+'view' => 'Guardado',
+'save' => 'Guardado exitoso',
+
 ];
