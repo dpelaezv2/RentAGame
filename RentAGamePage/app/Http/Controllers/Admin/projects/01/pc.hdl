@@ -1,0 +1,8 @@
+CHIP pc{
+    IN: a[16], inc, load, reset;
+    OUT: out[16];
+
+    PARTS:
+    Inc16(in=a, out=out1);
+    
+}

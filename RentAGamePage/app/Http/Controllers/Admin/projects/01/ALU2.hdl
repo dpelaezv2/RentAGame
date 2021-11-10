@@ -1,0 +1,9 @@
+CHIP ALU2{
+    IN x, y, p, q, zx, nx, zy, ny, f, no;
+    OUT out, ng, zr;
+
+    PARTS:
+    Mux4Way16(a=, b=, c=, d=, sel=, out=);
+    Mux16(a=, b=, sel=, out=);
+    ALU(x=x, y=y, zx=zx, nx=nx, zy=zy, ny=ny, f=f, no=no, out=, zr=, ng=);
+}
