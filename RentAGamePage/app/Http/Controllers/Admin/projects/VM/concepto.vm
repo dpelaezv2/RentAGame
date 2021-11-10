@@ -1,4 +1,0 @@
-push constant 111
-pop local 0
-push constant 222
-pop static 0
