@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Review;
-use App\Models\Videogame;
+use App\Models\VideoGame;
 use Illuminate\Support\Facades;
 use Illuminate\Http\Response;
 
@@ -14,7 +14,7 @@ class VideoGameController extends Controller
     public function show($id)
     {
         $data = []; //to be sent to the view
-        $product = Videogame::findOrFail($id);
+        $product = VideoGame::findOrFail($id);
         $data["product"] = $product;
     
         return view('')->with("data", $data);
@@ -22,7 +22,7 @@ class VideoGameController extends Controller
 
     public function fetchImage($imageId)
     {
-        $videoGame = Videogame::findOrFail($imageId);
+        $videoGame = VideoGame::findOrFail($imageId);
         $imageFile = $videoGame::make($videoGame->picture);
         $response = Response::make($imageFile->encode('jpeg'));
         $response ->header('Content-Type', 'image/jpeg');
@@ -43,13 +43,13 @@ class VideoGameController extends Controller
 
     public function filterPrice()
     {
-        $data = Videogame::all()->sortByDesc('price');
+        $data = VideoGame::all()->sortByDesc('price');
         return view('user.index')->with("data",$data);
     }
 
     public function filterCategory()
     {
-        $data = Videogame::all()->sortBy('category');
+        $data = VideoGame::all()->sortBy('category');
         return view('user.index')->with("data",$data);
     }
 }
