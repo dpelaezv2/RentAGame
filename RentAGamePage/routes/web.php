@@ -37,3 +37,5 @@ Route::get('/videogame/add-cart/{id}/{forRent}', 'App\Http\Controllers\ItemContr
 Route::get('/wishlist-show', 'App\Http\Controllers\WishlistController@show')->name("user.wishlist.show");
 Route::Post('/wishlist-add', 'App\Http\Controllers\WishlistController@add')->name("user.wishlist.add");
 
+Route::get('/videogames-list2', 'App\Http\Controllers\VideoGameController@list2')->name("videogame.list2");
+
