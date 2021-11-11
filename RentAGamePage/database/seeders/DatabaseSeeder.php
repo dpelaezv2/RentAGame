@@ -15,13 +15,13 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     { 
-        $user = User::where('email', "davidepik777@gmail.com")->first();
+        $user = User::where('email', "admin@gmail.com")->first();
         if($user == null) {
             User::firstOrCreate(
                 [
-                    "name" => "David",
-                    "address" => "Calle 20 sur",
-                    "email" => "davidepik777@gmail.com",
+                    "name" => "Admin",
+                    "address" => "el cielo",
+                    "email" => "admin@gmail.com",
                     "password" => Hash::make("12345678"),
                     "admin" => "1",
                 ]
