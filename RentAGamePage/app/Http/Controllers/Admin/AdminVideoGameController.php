@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
-use App\Models\Videogame;
+use App\Models\VideoGame;
 use Illuminate\Support\Facades\File;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Hash;
@@ -33,7 +33,7 @@ class AdminVideoGameController extends Controller
 
     public function save(Request $request)
     {
-        $videoGame = new Videogame();
+        $videoGame = new VideoGame();
         $videoGame->title = $request->input('title');
         $videoGame->developer = $request->input('developer');
         $videoGame->category = $request->input('category');
@@ -65,7 +65,7 @@ class AdminVideoGameController extends Controller
 
     public function fetchImage($imageId)
     {
-        $videoGame = Videogame::findOrFail($imageId);
+        $videoGame = VideoGame::findOrFail($imageId);
         $imageFile = $videoGame::make($videoGame->picture);
         $response = Response::make($imageFile->encode('jpeg'));
         $response ->header('Content-Type', 'image/jpeg');
@@ -77,14 +77,14 @@ class AdminVideoGameController extends Controller
     {
         $data = []; //to be sent to the view
         $data["title"] = "Lista de Juegos";
-        $data["videogames"] = Videogame::all();
+        $data["videogames"] = VideoGame::all();
         return view('admin.videogame.list')->with("data",$data);
     }
 
     public function delete(Request $request)
     {
         $id = $request->VGid;
-        $videogame = Videogame::find($id);
+        $videogame = VideoGame::find($id);
         $destination = 'uploads/videoGames/'.$videogame->getPicture();
         if(File::exists($destination))
         {
@@ -93,7 +93,7 @@ class AdminVideoGameController extends Controller
         $videogame->delete();
 
         $data = [];//To be sent to the view
-        $data["videogames"] = Videogame::all()->sortByDesc('id');
+        $data["videogames"] = VideoGame::all()->sortByDesc('id');
 
         return view('admin.videogame.list')->with("data", $data);
     }
