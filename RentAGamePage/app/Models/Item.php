@@ -67,11 +67,13 @@ class Item extends Model
         $this->attributes['videoGame_id'] = $videoGame;
     }
 
-    public function videoGame(){
+    public function videoGame()
+    {
         return $this->belongsTo(VideoGame::class);
     }
 
-    public function order(){
+    public function order()
+    {
         return $this->belongsTo(Order::class);
     }
 }

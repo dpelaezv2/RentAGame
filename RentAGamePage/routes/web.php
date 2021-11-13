@@ -38,4 +38,3 @@ Route::get('/wishlist-show', 'App\Http\Controllers\WishlistController@show')->na
 Route::Post('/wishlist-add', 'App\Http\Controllers\WishlistController@add')->name("user.wishlist.add");
 
 Route::get('/videogames-list2', 'App\Http\Controllers\VideoGameController@list2')->name("videogame.list2");
-

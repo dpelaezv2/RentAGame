@@ -20,4 +20,3 @@ class VideoGameResource extends JsonResource
         ];
     }
 }
-

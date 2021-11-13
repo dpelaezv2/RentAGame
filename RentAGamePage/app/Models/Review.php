@@ -1,8 +1,8 @@
 <?php
 
 namespace App\Models;
-use Illuminate\Http\Request;
 
+use Illuminate\Http\Request;
 use Illuminate\Database\Eloquent\Model;
 
 class Review extends Model
@@ -62,7 +62,8 @@ class Review extends Model
         $this->attributes['userId'] = $userId;
     }
 
-    public function order(){
+    public function order()
+    {
         return $this->belongsTo(Order::class);
     }
 
@@ -77,5 +78,4 @@ class Review extends Model
             ]
         );
     }
-    
 }
