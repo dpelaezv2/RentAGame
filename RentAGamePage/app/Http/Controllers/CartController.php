@@ -18,17 +18,15 @@ class CartController extends Controller
         $rent = [];
         $ids = $request->session()->get("videoGames"); //obtenemos ids de productos guardados en session
         $rent = $request->session()->get("forRent");
-        if($ids)
-        {
+        if ($ids) {
             $data["videoGames"] = VideoGame::find(array_values($ids));
             //$rent["forRent"] = $forRent;
-        }else
-        {
+        } else {
             $data["videoGames"] = array();
             //$rent["forRent"] = array();
         }
 
-        return view('user.cart.show')->with("data",$data)->with("rent",$rent);
+        return view('user.cart.show')->with("data", $data)->with("rent", $rent);
     }
 
     public function delete(Request $request)

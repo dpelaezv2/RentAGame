@@ -12,10 +12,8 @@ class AdminHomeController extends Controller
     public function __construct()
     {
         $this->middleware('auth');
-        $this->middleware(function ($request, $next) 
-        {
-            if (Auth::user()->getAdmin() != 1) 
-            {
+        $this->middleware(function ($request, $next) {
+            if (Auth::user()->getAdmin() != 1) {
                 return redirect()->route('videogame.list');
             }
             return $next($request);

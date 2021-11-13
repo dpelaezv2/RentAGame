@@ -14,9 +14,9 @@ class DatabaseSeeder extends Seeder
      * @return void
      */
     public function run()
-    { 
+    {
         $user = User::where('email', "admin@gmail.com")->first();
-        if($user == null) {
+        if ($user == null) {
             User::firstOrCreate(
                 [
                     "name" => "Admin",

@@ -10,7 +10,7 @@ class Videogame extends Model
 {
     use HasFactory;
 
-    //attributes id, title, developer, cetegory, price, used, 
+    //attributes id, title, developer, cetegory, price, used,
     //sale Stock, rentStock, KeyWords, picture, review, wishlist, item created_at, updated_at
     protected $fillable = ['title', 'developer', 'category', 'price', 'saleStock', 'rentStock', 'keyWords', 'picture'];
 
@@ -118,7 +118,7 @@ class Videogame extends Model
     {
         $this->attributes['picture'] = $picture;
     }
-    
+
     public static function validate(Request $request)
     {
         $request->validate(

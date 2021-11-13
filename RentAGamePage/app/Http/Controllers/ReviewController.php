@@ -34,7 +34,7 @@ class ReviewController extends Controller
         $data["videoGame"] = $videoGame;
         return view('user.reviewList')->with("data", $data);
     }
-    
+
     public function form($id)
     {
         $videoGame = VideoGame::findOrFail($id);
