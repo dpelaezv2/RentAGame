@@ -19,7 +19,6 @@ class LoginController extends Controller
     | to conveniently provide its functionality to your applications.
     |
     */
-
     use AuthenticatesUsers;
 
     /**
@@ -47,17 +46,14 @@ class LoginController extends Controller
             'password' => 'required',
         ]);
 
-        if(auth()->attempt(array('email' => $input['email'], 'password' => $input['password'])))
-        {
-            if(auth()->user()->getAdmin() == 0){
+        if (auth()->attempt(array('email' => $input['email'], 'password' => $input['password']))) {
+            if (auth()->user()->getAdmin() == 0) {
                 return redirect()->route('videogame.list');
-            } else
-            {
+            } else {
                 return redirect()->route('admin.home.index');
             }
-        } else
-        {
-            return redirect()->route('login')->with('error','E-mail And Password Incorrect');
+        } else {
+            return redirect()->route('login')->with('error', 'E-mail And Password Incorrect');
         }
     }
 }
