@@ -23,4 +23,4 @@ class ItemController extends Controller
         $request->session()->put('forRent', $forRent);
         return back();
     }
-  }
+}

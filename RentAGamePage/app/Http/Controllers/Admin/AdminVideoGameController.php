@@ -16,10 +16,8 @@ class AdminVideoGameController extends Controller
     public function __construct()
     {
         $this->middleware('auth');
-        $this->middleware(function ($request, $next) 
-        {
-            if (Auth::user()->getAdmin() != 1) 
-            {
+        $this->middleware(function ($request, $next) {
+            if (Auth::user()->getAdmin() != 1) {
                 return redirect()->route('videogame.list');
             }
             return $next($request);
@@ -41,25 +39,24 @@ class AdminVideoGameController extends Controller
         $videoGame->saleStock = $request->input('saleStock');
         $videoGame->rentStock = $request->input('rentStock');
         $videoGame->KeyWords = $request->input('keyWords');
-        if($request->hasFile('picture'))
-        {
+        if ($request->hasFile('picture')) {
             $file = $request->file('picture');
             $extention = $file->getClientOriginalExtension();
-            $fileName = time().'.'.$extention;
+            $fileName = time() . '.' . $extention;
             $file->move('uploads/videoGames/', $fileName);
             $videoGame->image = $fileName;
         }
         $videoGame->save();
 
-        return back()->with('success','Videogame added successfully!');
+        return back()->with('success', 'Videogame added successfully!');
     }
- 
+
     public function show($id)
     {
         $data = []; //to be sent to the view
         $product = Videogame::findOrFail($id);
         $data["product"] = $product;
-    
+
         return view('')->with("data", $data);
     }
 
@@ -69,8 +66,7 @@ class AdminVideoGameController extends Controller
         $imageFile = $videoGame::make($videoGame->picture);
         $response = Response::make($imageFile->encode('jpeg'));
         $response ->header('Content-Type', 'image/jpeg');
-        return $response; 
-
+        return $response;
     }
 
     public function adminList()
@@ -78,7 +74,7 @@ class AdminVideoGameController extends Controller
         $data = []; //to be sent to the view
         $data["title"] = "Lista de Juegos";
         $data["videogames"] = VideoGame::all();
-        return view('admin.videogame.list')->with("data",$data);
+        return view('admin.videogame.list')->with("data", $data);
     }
 
     public function delete(Request $request)

@@ -10,13 +10,14 @@ use Illuminate\Support\Facades\Auth;
 use App\Models\VideoGame;
 
 class WishlistController extends Controller
-{ 
+{
+
     public function add(Request $request)
     {
         Wishlist::validate($request);
         Wishlist::create($request->only(["videoGameId","userId"]));
-        $data= VideoGame::all()->sortByDesc('admin');
-        return view('user.index')->with("data",$data);
+        $data = VideoGame::all()->sortByDesc('admin');
+        return view('user.index')->with("data", $data);
     }
 
     public function show()
@@ -26,6 +27,6 @@ class WishlistController extends Controller
         $wishlists = [];
         $wishlists = Wishlist::where('userId', $userId)->get(['videoGameId'])->toArray();
         $data["videoGames"] = VideoGame::find(array_values($wishlists));
-        return view('user.wishlist.show')->with("data",$data);
+        return view('user.wishlist.show')->with("data", $data);
     }
 }

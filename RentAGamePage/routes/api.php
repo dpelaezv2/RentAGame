@@ -19,4 +19,3 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 Route::get('/videogames', 'App\Http\Controllers\Api\VideoGameApi@index')->name("api.videogame.index");
 Route::get('/videogames/{id}', 'App\Http\Controllers\Api\VideoGameApi@show')->name("api.videogame.show");
-

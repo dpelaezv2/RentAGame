@@ -10,7 +10,8 @@ use Illuminate\Http\Request;
 
 class User extends Authenticatable
 {
-    use HasFactory, Notifiable;
+    use HasFactory;
+    use Notifiable;
 
     //Atributos: id, name, email, password, address, renting, admin, wishlist, review, order
 
@@ -99,7 +100,7 @@ class User extends Authenticatable
     {
         $this->attributes['email'] = $email;
     }
-    
+
     public function getAddress()
     {
         return $this->attributes['address'];

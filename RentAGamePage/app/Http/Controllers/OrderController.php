@@ -25,19 +25,17 @@ class OrderController extends Controller
         $data = []; //to be sent to the view
         $ids = $request->session()->get("videoGames"); //obtenemos ids de productos guardados en session
         $total = 0;
-        if($ids)
-        {
+        if ($ids) {
             $order = new Order();
             $order->setFullPrice(0);
             $order->setDate(Carbon::today());
             $order->setAddress(Auth::user()->getAddress());
             $order->save();
             $videoGames = VideoGame::find(array_values($ids));
-            foreach ($videoGames as $videoGame) 
-            {
+            foreach ($videoGames as $videoGame) {
                 $item = new Item();
                 $item->setOrder($order->getId());
-                $item->setForRent(False);
+                $item->setForRent(false);
                 $item->setRentTime(30);
                 $item->setVideoGame($videoGame->getId());
                 $total = $total + $videoGame->getPrice();
@@ -47,9 +45,8 @@ class OrderController extends Controller
             $order->setFullPrice($total);
             $order->save();
             $data = $order->getFullPrice();
-        } else
-        {
+        } else {
         }
-        return view('user.cart.buy')->with("data",$data);
+        return view('user.cart.buy')->with("data", $data);
     }
 }
