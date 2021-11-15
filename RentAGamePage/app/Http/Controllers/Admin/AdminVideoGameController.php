@@ -81,8 +81,9 @@ class AdminVideoGameController extends Controller
     {
         $id = $request->VGid;
         $videogame = VideoGame::find($id);
-        $destination = 'uploads/videoGames/' . $videogame->getPicture();
-        if (File::exists($destination)) {
+        $destination = 'uploads/videoGames/'.$videogame->getPicture();
+        if(File::exists($destination))
+        {
             File::delete($destination);
         }
         $videogame->delete();
