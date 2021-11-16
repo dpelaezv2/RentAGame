@@ -16,5 +16,6 @@ return [
     'filterCategory' => 'Filtrar por Categoría',
     'bill' => 'El total a pagar es:',
     'home' => 'OK',
-    
+    'cat' => 'Dato curioso de gatos: ',
+    'movie' => 'Te recomendamos una pelicula: ',
 ];

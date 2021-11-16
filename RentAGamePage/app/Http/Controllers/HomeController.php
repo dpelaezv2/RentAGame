@@ -11,18 +11,6 @@ class HomeController extends Controller
         return view('home.index');
     }
 
-    public function indexEn()
-    {
-        setlocale(0,"en");
-        return view('home.index');
-    }
-
-    public function indexEs()
-    {
-        setlocale(0,"es");
-        return view('home.index');
-    }
-
     public function home()
     {
         return redirect()->route('home.index');

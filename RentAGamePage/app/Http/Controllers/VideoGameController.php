@@ -7,6 +7,8 @@ use App\Models\Review;
 use App\Models\VideoGame;
 use Illuminate\Support\Facades;
 use Illuminate\Http\Response;
+use Illuminate\Support\Facades\Http;
+use App\Interfaces\RandomMovie;
 
 class VideoGameController extends Controller
 {
@@ -31,24 +33,40 @@ class VideoGameController extends Controller
 
     public function list()
     {
-        $data = VideoGame::all();
-        return view('user.index')->with("data", $data);
-    }
+        $randomMovie = app(RandomMovie::class);
+        $movie = $randomMovie->random();
+        $data["movie"] = $movie;
 
-    public function list2()
-    {
-        return view('home.index');
+        $response = Http::get('https://catfact.ninja/fact');
+        $fact = json_decode($response->body());
+        $data["frase"] = $fact->fact;
+        $data["videogames"] = VideoGame::all();
+        return view('user.index')->with("data", $data);
     }
 
     public function filterPrice()
     {
-        $data = VideoGame::all()->sortByDesc('price');
+        $randomMovie = app(RandomMovie::class);
+        $movie = $randomMovie->random();
+        $data["movie"] = $movie;
+
+        $response = Http::get('https://catfact.ninja/fact');
+        $fact = json_decode($response->body());
+        $data["frase"] = $fact->fact;
+        $data["videogames"] = VideoGame::all()->sortByDesc('price');
         return view('user.index')->with("data", $data);
     }
 
     public function filterCategory()
     {
-        $data = VideoGame::all()->sortBy('category');
+        $randomMovie = app(RandomMovie::class);
+        $movie = $randomMovie->random();
+        $data["movie"] = $movie;
+
+        $response = Http::get('https://catfact.ninja/fact');
+        $fact = json_decode($response->body());
+        $data["frase"] = $fact->fact;
+        $data["videogames"] = VideoGame::all()->sortBy('category');
         return view('user.index')->with("data", $data);
     }
 }
