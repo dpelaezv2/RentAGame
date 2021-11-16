@@ -1,6 +1,6 @@
 <?php 
 
-namespace App\Interfaces;
+namespace App\interfaces;
 use Illuminate\Http\Request;
 
 interface RandomMovie {

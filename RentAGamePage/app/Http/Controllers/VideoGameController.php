@@ -8,7 +8,7 @@ use App\Models\VideoGame;
 use Illuminate\Support\Facades;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Http;
-use App\Interfaces\RandomMovie;
+use App\interfaces\RandomMovie;
 
 class VideoGameController extends Controller
 {
