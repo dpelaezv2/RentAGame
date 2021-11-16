@@ -6,3 +6,4 @@ use Illuminate\Http\Request;
 interface RandomMovie {
     public function random();
 }
+
