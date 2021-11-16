@@ -16,5 +16,6 @@ return [
     'filterCategory' => 'Filter by category',
     'bill' => 'Your bill:',
     'home' => 'OK',
-    
+    'cat' => 'Cats fun fact: ',
+    'movie' => 'We recommend you a movie: ',
 ];

@@ -6,6 +6,18 @@
     <div class="container">
         <!-- Portfolio Section Heading-->
         <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">{{ __('user.inicioTitulo') }}</h2>
+        <div class="divider-custom">
+            <div class="divider-custom-line"></div>
+        </div>
+        <div class="row justify-content-center">
+            <b>{{ __('user.cat') }} {{ $data["frase"]}}</b>
+        </div>
+        <div class="divider-custom">
+            <div class="divider-custom-line"></div>
+        </div>
+        <div class="row justify-content-center">
+            <b>{{ __('user.movie') }} {{ $data["movie"]->title }}</b>
+        </div>
         <!-- Icon Divider-->
         <div class="divider-custom">
             <div class="divider-custom-line"></div>
@@ -32,7 +44,7 @@
         </div>
         <!-- Portfolio Grid Items-->
         <div class="row">
-            @foreach ($data as $videoGame)
+            @foreach ($data["videogames"] as $videoGame)
             <!-- Portfolio Item 1-->
             <div class="col-md-6 col-lg-4 mb-5">
                 <div class="portfolio-item mx-auto" data-toggle="modal" data-target={{ '#portfolioModal'.$loop->index }}>
@@ -124,7 +136,7 @@
     </div>
 </section>
 <body>
-    @foreach ($data as $videoGame)
+    @foreach ($data["videogames"] as $videoGame)
         <div class="portfolio-modal modal fade" id={{ 'portfolioModal'.$loop->index }} tabindex="-1" role="dialog" aria-labelledby="portfolioModal1Label" aria-hidden="true">
             <div class="modal-dialog modal-xl" role="document">
                 <div class="modal-content">
