@@ -2,7 +2,7 @@
 
 namespace App\Util;
 
-use App\Interfaces\RandomMovie;
+use App\interfaces\RandomMovie;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Http;
 

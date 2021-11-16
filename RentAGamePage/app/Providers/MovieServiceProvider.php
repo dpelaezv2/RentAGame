@@ -3,7 +3,7 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
-use App\Interfaces\RandomMovie;
+use App\interfaces\RandomMovie;
 use App\Util\RandomLocalMovie;
 
 class MovieServiceProvider extends ServiceProvider
